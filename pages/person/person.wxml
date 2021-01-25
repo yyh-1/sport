@@ -1,0 +1,15 @@
+<view style="height:{{allHeight}}rpx">
+  <view class="top">
+    <view class="hand">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class="body">
+    <view class="bodylist">
+      <block wx:for="{{personList}}" wx:key="index">
+          <image class="logo" src="{{item.image}}"></image>
+          <navigator url="{{item.src}}"><view class="text">{{item.text}}</view></navigator>
+      </block>
+    </view>
+  </view>
+</view>

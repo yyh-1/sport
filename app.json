@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/opinion/opinion",
+    "pages/appoint/appoint",
+    "pages/time/time",
+    "pages/person/person",
+    "pages/message/message",
+    "pages/history/history",
+    "pages/friend/friend",
+    "pages/fill/fill"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

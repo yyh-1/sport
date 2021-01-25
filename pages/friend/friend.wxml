@@ -1,0 +1,26 @@
+<view style="height:{{allHeight}}rpx">
+  <view class="top">
+    <view class="topcontent">
+      <block wx:for="{{contentList}}" wx:key="index">
+        <view class="content">
+          <image src="/image/geren.png"></image>
+          <text class="text1">{{item.name}}</text>
+          <text class="text2">{{item.nameId}}</text>
+          <button type="warn" size="mini">删除</button>
+        </view>
+      </block>
+      </view>
+      <view class="add">
+        <text class="text1">添加同行人员</text>
+        <view class="name">
+          <text class="text2">姓名</text>
+          <input type="text" placeholder-class="placeholderName" class="inputName" placeholder="请输入姓名" />
+        </view>
+        <view class="name">
+          <text class="text2">身份证号</text>
+          <input type="text" placeholder-class="placeholderName" class="inputName" placeholder="请输入18位身份证号" />
+        </view>
+      </view>
+      <button class="btn">添加同行人员</button>
+  </view>
+</view>

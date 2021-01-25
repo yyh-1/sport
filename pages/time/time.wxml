@@ -1,0 +1,66 @@
+<view style="height:{{allHeight}}rpx">
+  <view class="top">
+    <view class="topList">
+      <view class="area">
+        <image src="/image/areagreen.png"></image>
+        <text>选场地</text>
+        <image class="arrow" src="/image/arrow.png"></image>
+      </view>
+      <view class="time">
+        <image src="/image/time.png"></image>
+        <text>选时间</text>
+        <image class="arrow" src="/image/arrow.png"></image>
+      </view>
+      <view class="message">
+        <image src="/image/message.png"></image>
+        <text>填信息</text>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="bodylocation">
+      <text class="text1">场地</text>
+      <text class="text2">{{location}}</text>
+      <image src="/image/arrow.png"></image>
+    </view>
+    <view class="bodydate">
+      <picker mode="date" bindchange="bindChange">日期选择</picker>
+      <text>{{time}}</text>
+    </view>
+    <view class="bodytime">
+      <view class="morning">
+        <image src="/image/dian.png"></image>
+        <text>上午</text>
+        <view>
+          <block wx:for="{{morningList}}" wx:key="index">
+            <navigator url="/pages/fill/fill?location={{location}}&time={{morningList[index]}}">
+              <button>{{item}}</button>
+            </navigator>
+          </block>
+        </view>
+      </view>
+      <view class="moon">
+        <image src="/image/dian.png"></image>
+        <text>下午</text>
+        <view>
+          <block wx:for="{{moonList}}" wx:key="index">
+            <navigator url="/pages/fill/fill?location={{location}}&time={{moonList[index]}}">
+              <button>{{item}}</button>
+            </navigator>
+          </block>
+        </view>
+      </view>
+      <view class="evening">
+        <image src="/image/dian.png"></image>
+        <text>晚上</text>
+        <view>
+          <block wx:for="{{eveningList}}" wx:key="index">
+            <navigator url="/pages/fill/fill?location={{location}}&time={{eveningList[index]}}">
+              <button>{{item}}</button>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

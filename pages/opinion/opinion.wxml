@@ -1,0 +1,10 @@
+<view style="height:{{allHeight}}rpx">
+  <view class="top">
+    <view class="picker">
+      <picker range="{{errtype}}" bindchange="bindChange">选择反馈类型</picker>
+      <text>{{type}}</text>
+    </view>
+    <editor class="content" />
+    <button type="primary">提交反馈</button>
+  </view>
+</view>

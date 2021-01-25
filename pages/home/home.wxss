@@ -1,0 +1,87 @@
+
+.top{
+  height: 35%;
+}
+.top image{
+  width: 100%;
+  height: 100%;
+}
+.body{
+  position: relative;
+  top: -20rpx;
+  /* background-color: #F5F5F5; */
+  background-color: #C8C8C8;
+  height: 70%;
+  border-radius: 12px 12px 0 0;
+}
+.body .bodyHand{
+  position: relative;
+  top: 3%;
+  left: 7%;
+  width: 300rpx;
+  height: 10%;
+}
+.body .bodyHand .hand{
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.body .bodyHand .name{
+  position: relative;
+  left: 20rpx;
+  top: 12rpx;
+}
+.body .bodyHand .foot image{
+  position: relative;
+  top: -10rpx;
+  left: 70rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.body .bodyHand .foot text{
+  position: relative;
+  top: -15rpx;
+  left: 80rpx;
+  font-size: 12px;
+}
+.body .appimage{
+  position: absolute;
+  width: 42%;
+  height: 46%;
+  left: 50rpx;
+  top: 14%;
+  border-radius: 8px;
+}
+.body .perimage{
+  position: absolute;
+  width: 42%;
+  height: 22%;
+  right: 50rpx;
+  top: 14%;
+  border-radius: 8px;
+}
+.body .hisimage{
+  position: absolute;
+  width: 42%;
+  height: 22%;
+  right: 50rpx;
+  top: 38%;
+  border-radius: 8px;
+}
+.foot{
+  position: absolute;
+  top: 62%;
+  width: 86%;
+  height: 34%;
+  margin: 0 50rpx 0 50rpx;
+}
+swiper{
+  height: 100%;
+}
+.foot image{
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}

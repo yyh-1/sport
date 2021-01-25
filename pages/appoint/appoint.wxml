@@ -1,0 +1,34 @@
+<view style="height:{{allHeight}}rpx">
+  <view class="top">
+    <view class="topList">
+      <view class="area">
+        <image src="/image/area.png"></image>
+        <text>选场地</text>
+        <image class="arrow" src="/image/arrow.png"></image>
+      </view>
+      <view class="time">
+        <image src="/image/time.png"></image>
+        <text>选时间</text>
+        <image class="arrow" src="/image/arrow.png"></image>
+      </view>
+      <view class="message">
+        <image src="/image/message.png"></image>
+        <text>填信息</text>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="bodyList">
+      <swiper autoplay interval="3000" indicator-dots current="{{index}}" circular indicator-active-color="#ccccff" bindchange="bindChange">
+          <block wx:for="{{swiperList}}" wx:key="index">
+              <navigator url="/pages/time/time?location={{btnList[index]}}">
+                <swiper-item><image src="{{item.src}}"></image></swiper-item>
+              </navigator>
+          </block>
+      </swiper>
+    </view>
+    <view class="btnlist" wx:for="{{btnList}}" wx:key="index">
+      <button style="background-color:{{activeColor[index]}}" bindtap="bindBtn" data-index="{{index}}">{{item}}</button>
+    </view>
+  </view>
+</view>

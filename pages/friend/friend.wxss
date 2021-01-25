@@ -1,0 +1,77 @@
+.top{
+  height: 100%;
+  background-color: #f5f5f5;
+}
+.top .topcontent{
+  position: relative;
+  top: 2%;
+  width: 90%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.top .topcontent .content{
+  height: 120rpx;
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+.top .topcontent .content image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.top .topcontent .content .text1{
+  margin-left: 20rpx;
+}
+.top .topcontent .content .text2{
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: #c8c8c8;
+}
+.top .topcontent .content button{
+  position: absolute;
+  right: 10%;
+}
+.top .add{
+  position: relative;
+  top: 5%;
+  width: 90%;
+  height: 300rpx;
+  margin: auto;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.top .add .text1{
+  position: relative;
+  top: 20rpx;
+  left: calc(50% - 96rpx);
+  color: #666666;
+}
+.top .add .name{
+  position: relative;
+  height: 70rpx;
+  top: 50rpx;
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.top .add .name .inputName{
+  position: absolute;
+  right: 0;
+}
+.top .btn{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  border: 2px solid #00aa00;
+  border-radius: 50rpx;
+  color: #00aa00;
+}
+.inputName, .placeholderName {
+  text-align: right;
+}

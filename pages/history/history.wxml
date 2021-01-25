@@ -1,0 +1,18 @@
+<view style="height:{{allHeight}}rpx">
+  <view class="top">
+    <text>全部记录</text>
+  </view>
+  <view class="body">
+    <block wx:for="{{bodyList}}" wx:key="index">
+      <view class="content">
+        <block wx:for="{{contentList}}" wx:key="index">
+          <view class="contentList">
+            <image src="{{item.src}}"></image>
+            <text class="text1">{{item.text}}</text>
+            <text class="text2">{{item.content}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view class="app" style="height:{{allHeight}}rpx">
+  <view class="top">
+    <image src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3006132523,2793237773&fm=26&gp=0.jpg"></image>
+  </view>
+  <view class="body">
+    <view class="bodyHand">
+      <view class="hand">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="name">
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class="foot">
+        <image src="/image/bingo.png"></image>
+        <text>已认证</text>
+      </view>
+    </view>
+    <navigator url="/pages/appoint/appoint">
+      <image class="appimage" src="/image/appoint.png"></image>
+    </navigator>
+    <navigator url="/pages/person/person">
+      <image class="perimage" src="/image/person.png"></image>
+    </navigator>
+    <navigator url="/pages/history/history">
+      <image class="hisimage" src="/image/history.png"></image>
+    </navigator>
+    <view class="foot">
+      <swiper autoplay interval="2000" circular>
+        <swiper-item>
+          <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3128690578,4072203222&fm=26&gp=0.jpg"></image> 
+        </swiper-item>
+        <swiper-item>
+          <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=101726970,2167665141&fm=26&gp=0.jpg"></image> 
+        </swiper-item>
+        <swiper-item>
+          <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3937661752,3223797379&fm=26&gp=0.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4261945939,3500296717&fm=26&gp=0.jpg"></image>
+        </swiper-item>
+    </swiper>
+    </view>   
+  </view>
+</view>
