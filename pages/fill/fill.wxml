@@ -1,1 +1,55 @@
-<view>{{location}}{{time}}</view>
+<view style="height:{{allHeight}}rpx">
+  <view class="top">
+    <view class="topList">
+      <view class="area">
+        <image src="/image/areagreen.png"></image>
+        <text>选场地</text>
+        <image class="arrow" src="/image/arrow.png"></image>
+      </view>
+      <view class="time">
+        <image src="/image/timegreen.png"></image>
+        <text>选时间</text>
+        <image class="arrow" src="/image/arrow.png"></image>
+      </view>
+      <view class="message">
+        <image src="/image/message.png"></image>
+        <text>填信息</text>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <form bindsubmit="formSubmit">
+      <view class="bodylocation">
+        <text class="text1">场地</text>
+        <text class="text2">{{location}}</text>
+        <image src="/image/arrow.png"></image>
+      </view>
+      <view class="bodytime">
+        <text class="text1">时间</text>
+        <text class="text2">{{date}} {{time}}</text>
+        <image src="/image/arrow.png"></image>
+      </view>
+      <view class="bodymessage">
+          <block wx:for="{{messageList}}" wx:key="index">
+            <view class="message">
+              <text>{{item.name}}</text>
+              <input type="text" class="inputName" name="{{item.inputName}}" placeholder-class="placeholderName" placeholder="{{item.placeholder}}" value="{{item.userdata}}" />
+            </view>
+          </block>
+      </view>
+      <view class="bodyfriend">
+        <text>添加同行人员</text>
+        <picker mode="selector" bindchange="bindChange" range="{{friendList}}"><image src="/image/add.png"></image></picker>
+      </view>
+      <view class="friendlist" wx:if="{{friendif}}">
+        <block wx:for="{{List}}" wx:key="index">
+          <view class="friendid">
+            <text>{{item}}</text>
+            <image src="/image/cha.png" bindtap="bindDelete" data-index="{{index}}"></image>
+          </view>
+        </block>
+      </view>
+      <button type="primary" form-type="submit">预约</button>
+    </form> 
+  </view>
+</view>

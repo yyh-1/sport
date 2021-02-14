@@ -6,26 +6,63 @@ Page({
    */
   data: {
     allHeight:0,
-    contentList:[
-      {
-        name:"杨宇航",
-        nameId:"123456"
-      },
-      {
-        name:"张雨婷",
-        nameId:"123456"
-      },
-      {
-        name:"脆弱恩",
-        nameId:"123456"
-      },
-    ]
+    contentList:[]
+  },
+  //获取表单信息
+  formSubmit(e){
+    let message = {
+      name:e.detail.value.name,
+      id:e.detail.value.id
+    }
+    this.cloudDBadd(message)
+  },
+  //向数据库添加同行人员
+  cloudDBadd(message){
+    if(message.name==''||message.id==''){
+      wx.showToast({
+        title: '请完整填写信息',
+      })
+    }else{
+      const db = wx.cloud.database()
+      db.collection('friend').add({
+        data:{
+          "username":message.name,
+          "userid":message.id
+        }
+      })
+      wx.showToast({
+        title: '添加成功',
+      })
+    }
+  },
+  //删除同行人员
+  bindDelect(e){
+    let a = e.currentTarget.dataset._id
+    const db = wx.cloud.database()
+    db.collection('friend').doc(a).remove({
+      success: function(res) {
+        console.log(res.data)
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //从数据库获取同行人员信息
+    const db = wx.cloud.database();
+    db.collection('friend').get().then(res=>{
+      console.log(res.data)
+      let arr = [];
+      for(let i=0;i<res.data.length;i++){
+        arr.push({name:res.data[i].username,id:res.data[i].userid,_id:res.data[i]._id})
+      }
+      this.setData({
+        contentList:arr
+      })
+    })
+    //获取页面高度
     wx.getSystemInfo({
       success: (res) => {
         let that = this;

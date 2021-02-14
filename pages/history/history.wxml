@@ -1,17 +1,59 @@
 <view style="height:{{allHeight}}rpx">
-  <view class="top">
-    <text>全部记录</text>
+  <view class="top1" style="background-color:{{activeColor1}}" bindtap="bindtop1">
+    <text>待审核</text>
   </view>
-  <view class="body">
+  <view class="top2" style="background-color:{{activeColor2}}" bindtap="bindtop2">
+    <text>已预约</text>
+  </view>
+  <view class="body" wx:if="{{topActive==0}}">
     <block wx:for="{{bodyList}}" wx:key="index">
       <view class="content">
-        <block wx:for="{{contentList}}" wx:key="index">
-          <view class="contentList">
-            <image src="{{item.src}}"></image>
-            <text class="text1">{{item.text}}</text>
-            <text class="text2">{{item.content}}</text>
-          </view>
-        </block>
+        <view class="contentList">
+          <image src="/image/areared.png"></image>
+          <text class="text1">场地</text>
+          <text class="text2">{{item.location}}</text>
+        </view>
+        <view class="contentList">
+          <image src="/image/timeyellow.png"></image>
+          <text class="text1">时间</text>
+          <text class="text2">{{item.date}} {{item.time}}</text>
+        </view>
+        <view class="contentList">
+          <image src="/image/shuangren.png"></image>
+          <text class="text1">同行人员</text>
+          <text class="text2">{{item.friend}}</text>
+        </view>
+        <view class="contentList">
+          <image src="/image/hua.png"></image>
+          <text class="text1">状态</text>
+          <text class="text2">待审核</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="body" wx:if="{{topActive==1}}">
+    <block wx:for="{{endList}}" wx:key="index">
+      <view class="content">
+        <view class="contentList">
+          <image src="/image/areared.png"></image>
+          <text class="text1">场地</text>
+          <text class="text2">{{item.location}}</text>
+        </view>
+        <view class="contentList">
+          <image src="/image/timeyellow.png"></image>
+          <text class="text1">时间</text>
+          <text class="text2">{{item.date}} {{item.time}}</text>
+        </view>
+        <view class="contentList">
+          <image src="/image/shuangren.png"></image>
+          <text class="text1">同行人员</text>
+          <text class="text2">{{item.friend}}</text>
+        </view>
+        <view class="contentList">
+          <image src="/image/hua.png"></image>
+          <text class="text1">状态</text>
+          <text class="text2">预约成功</text>
+        </view>
       </view>
     </block>
   </view>

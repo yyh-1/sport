@@ -12,6 +12,7 @@ Page({
     moonList:['15:00-16:00','16:00-17:00','17:00-18:00'],
     eveningList:['19:00-20:00','20:00-21:00'],
   },
+  //获取日期
   bindChange(e){
     console.log(e.detail.value)
     let time = e.detail.value
@@ -26,6 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //获取手机页面高度
     wx.getSystemInfo({
       success: (res) => {
         let that = this;

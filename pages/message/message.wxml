@@ -4,7 +4,7 @@
       <block wx:for="{{inputList}}" wx:key="index">
         <view class="name">
           <view class="text">{{item.text}}</view>
-          <input type="{{item.type}}" class="inputName" name="{{item.inputName}}" placeholder-class="placeholderName" placeholder="{{item.placeholder}}" />
+          <input type="{{item.type}}" class="inputName" name="{{item.inputName}}" placeholder-class="placeholderName" placeholder="{{item.placeholder}}" value="{{item.userdata}}" />
         </view>
       </block>
       <button type="primary" form-type="submit">保存</button>

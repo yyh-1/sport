@@ -33,7 +33,7 @@
         <text>上午</text>
         <view>
           <block wx:for="{{morningList}}" wx:key="index">
-            <navigator url="/pages/fill/fill?location={{location}}&time={{morningList[index]}}">
+            <navigator url="/pages/fill/fill?location={{location}}&date={{time}}&time={{morningList[index]}}">
               <button>{{item}}</button>
             </navigator>
           </block>
@@ -44,7 +44,7 @@
         <text>下午</text>
         <view>
           <block wx:for="{{moonList}}" wx:key="index">
-            <navigator url="/pages/fill/fill?location={{location}}&time={{moonList[index]}}">
+            <navigator url="/pages/fill/fill?location={{location}}&date={{time}}&time={{moonList[index]}}">
               <button>{{item}}</button>
             </navigator>
           </block>
@@ -55,7 +55,7 @@
         <text>晚上</text>
         <view>
           <block wx:for="{{eveningList}}" wx:key="index">
-            <navigator url="/pages/fill/fill?location={{location}}&time={{eveningList[index]}}">
+            <navigator url="/pages/fill/fill?location={{location}}&date={{time}}&time={{eveningList[index]}}">
               <button>{{item}}</button>
             </navigator>
           </block>

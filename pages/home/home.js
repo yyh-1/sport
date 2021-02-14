@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //获取手机屏幕页面高度
     wx.getSystemInfo({
       success: (res) => {
         let that = this;

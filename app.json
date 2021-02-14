@@ -1,14 +1,14 @@
 {
   "pages":[
     "pages/home/home",
+    "pages/fill/fill",
     "pages/opinion/opinion",
     "pages/appoint/appoint",
     "pages/time/time",
     "pages/person/person",
     "pages/message/message",
     "pages/history/history",
-    "pages/friend/friend",
-    "pages/fill/fill"
+    "pages/friend/friend"
   ],
   "window":{
     "backgroundTextStyle":"light",

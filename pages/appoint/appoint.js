@@ -27,7 +27,7 @@ Page({
     ],
     btnList:["篮球场","羽毛球","游泳馆","健身房","乒乓球"]
   },
-
+  //根据按钮切换轮播图
   bindBtn(e){
     let index = e.currentTarget.dataset.index;
     let arr = []
@@ -43,6 +43,7 @@ Page({
       activeColor:arr
     })
   },
+  //当轮播图切换时按钮随之改变
   bindChange(e){
     let index = e.detail.current;
     let arr = [];
@@ -63,6 +64,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //获取手机屏幕页面高度
     wx.getSystemInfo({
       success: (res) => {
         let that = this;

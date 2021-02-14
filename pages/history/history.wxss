@@ -1,11 +1,24 @@
-.top{
+.top1{
   height: 7%;
-  width: 100%;
+  width: 50%;
   /* background-color: tomato; */
   display: flex;
   align-items: center;
+  float: left;
 }
-.top text{
+.top1 text{
+  position: relative;
+  left: calc(50% - 48rpx);
+}
+.top2{
+  height: 7%;
+  width: 50%;
+  /* background-color: tomato; */
+  display: flex;
+  align-items: center;
+
+}
+.top2 text{
   position: relative;
   left: calc(50% - 48rpx);
 }
@@ -45,3 +58,26 @@
   right: 8%;
   color: #666666;
 }
+
+
+/* .body .content .contentList{
+  height: 25%;
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+.body .content .contentList image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.body .content .contentList .text1{
+  margin-left: 20rpx;
+  color: #666666;
+}
+.body .content .contentList .text2{
+  position: absolute;
+  right: 8%;
+  color: #666666;
+} */

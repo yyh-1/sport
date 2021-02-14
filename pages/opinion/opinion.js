@@ -9,6 +9,7 @@ Page({
     errtype:["功能异常","产品建议","违规举报"],
     type:''
   },
+  //
   bindChange(e){
     let index = e.detail.value;
     let type = this.data.errtype[index]
@@ -21,6 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //获取手机页面高度
     wx.getSystemInfo({
       success: (res) => {
         let that = this;

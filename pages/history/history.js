@@ -6,35 +6,45 @@ Page({
    */
   data: {
     allHeight:0,
-    bodyList:["1"],
-    contentList:[
-      {
-        src:"/image/areared.png",
-        text:"场地",
-        content:"游泳馆"
-      },
-      {
-        src:"/image/timeyellow.png",
-        text:"时间",
-        content:"2021-01-23 - 19:00-20:00"
-      },
-      {
-        src:"/image/shuangren.png",
-        text:"同行人员",
-        content:"0 人"
-      },
-      {
-        src:"/image/hua.png",
-        text:"状态",
-        content:"预约成功"
-      },
-    ]
+    bodyList:[],
+    endList:[],
+    topActive:0,
+    activeColor1:'#ccccff',
+    activeColor2:'#fff',
   },
-
+  //切换到待审核界面
+  bindtop1(){
+    this.setData({
+      activeColor1:'#ccccff',
+      activeColor2:'#fff',
+      topActive:'0'
+    })
+  },
+  //切换到成功预约界面
+  bindtop2(){
+    this.setData({
+      activeColor1:'#fff',
+      activeColor2:'#ccccff',
+      topActive:'1'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //向数据库表message获取预约信息
+    const db = wx.cloud.database();
+    db.collection('message').get().then(res=>{
+      console.log(res.data)
+      let arr = [];
+      for(let i=res.data.length-1;i>=0;i--){
+        arr.push({location:res.data[i].location,time:res.data[i].time,date:res.data[i].date,friend:res.data[i].friend.length})
+      }
+      this.setData({
+        bodyList:arr
+      })
+    })
+    //获取手机屏幕页面高度
     wx.getSystemInfo({
       success: (res) => {
         let that = this;
@@ -54,7 +64,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    //处理待审核，三分钟后预约成功
+      setTimeout(()=>{
+        this.setData({
+          endList:this.data.bodyList,
+          bodyList:[]
+        })
+      },180000)
   },
 
   /**
